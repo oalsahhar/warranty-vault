@@ -22,7 +22,83 @@
 
   <main>
     <h2>My Products</h2>
-    <p>Page content should be here</p>
+    <p>Welcome, Omar. You have 5 saved products.</p>
+
+    <!-- Number of products in each status -->
+    <section>
+      <h3>Summary</h3>
+      <ul>
+        <li>Active: 3</li>
+        <li>Expiring within 30 days: 1</li>
+        <li>Expired: 1</li>
+      </ul>
+    </section>
+
+    <!-- Search and filter (filter buttons will work in week 3 with JavaScript) -->
+    <section>
+      <h3>Search and Filter</h3>
+      <form>
+        <label for="search">Search by product or store:</label>
+        <input type="search" id="search" name="search" placeholder="e.g. Galaxy or Jarir">
+        <button type="submit">Search</button>
+      </form>
+      <p>
+        <button type="button">All</button>
+        <button type="button">Active</button>
+        <button type="button">Expiring Soon</button>
+        <button type="button">Expired</button>
+      </p>
+    </section>
+
+    <!-- One card for each product -->
+    <section>
+      <h3>Products</h3>
+
+      <section>
+        <h4>Samsung Galaxy S24</h4>
+        <p>Status: <strong>Active</strong></p>
+        <p>Jarir - bought on 12/03/2026</p>
+        <p>Warranty remaining: <meter min="0" max="100" value="72">72%</meter></p>
+        <p>524 days left - Ends on 12/03/2028</p>
+        <a href="details.html">Details</a>
+      </section>
+
+      <section>
+        <h4>LG Washing Machine</h4>
+        <p>Status: <strong>Active</strong></p>
+        <p>eXtra - bought on 20/01/2025</p>
+        <p>Warranty remaining: <meter min="0" max="100" value="15">15%</meter></p>
+        <p>107 days left - Ends on 20/01/2027</p>
+        <a href="details.html">Details</a>
+      </section>
+
+      <section>
+        <h4>Dyson V15 Vacuum</h4>
+        <p>Status: <strong>Active</strong></p>
+        <p>SACO - bought on 01/02/2026</p>
+        <p>Warranty remaining: <meter min="0" max="100" value="66">66%</meter></p>
+        <p>484 days left - Ends on 01/02/2028</p>
+        <a href="details.html">Details</a>
+      </section>
+
+      <section>
+        <h4>Sony WH-1000XM5 Headphones</h4>
+        <p>Status: <strong>Expiring Soon</strong></p>
+        <p>Jarir - bought on 25/10/2025</p>
+        <p>Warranty remaining: <meter min="0" max="100" value="5">5%</meter></p>
+        <p>20 days left - Ends on 25/10/2026</p>
+        <a href="details.html">Details</a>
+      </section>
+
+      <section>
+        <h4>HP Pavilion Laptop</h4>
+        <p>Status: <strong>Expired</strong></p>
+        <p>eXtra - bought on 10/06/2024</p>
+        <p>Warranty remaining: <meter min="0" max="100" value="0">0%</meter></p>
+        <p>Warranty expired - Ended on 10/06/2026</p>
+        <a href="details.html">Details</a>
+      </section>
+    </section>
   </main>
 
   <footer>

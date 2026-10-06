@@ -22,7 +22,49 @@
 
   <main>
     <h2>Login</h2>
-    <p>Page content should be here</p>
+
+    <!-- Login form: after logging in, go to the dashboard -->
+    <section>
+      <h3>Welcome Back</h3>
+      <form action="dashboard.html" method="get">
+        <p>
+          <label for="login-email">Email</label><br>
+          <input type="email" id="login-email" name="email" placeholder="name@example.com" required>
+        </p>
+        <p>
+          <label for="login-password">Password</label><br>
+          <input type="password" id="login-password" name="password" required>
+        </p>
+        <p>
+          <button type="submit">Login</button>
+        </p>
+      </form>
+      <p>Don't have an account? <a href="#register">Create one</a></p>
+    </section>
+
+    <!-- Register form: the link above jumps to this id -->
+    <section id="register">
+      <h3>Create an Account</h3>
+      <form action="dashboard.html" method="get">
+        <p>
+          <label for="reg-name">Name</label><br>
+          <input type="text" id="reg-name" name="name" placeholder="e.g. Omar" required>
+        </p>
+        <p>
+          <label for="reg-email">Email</label><br>
+          <input type="email" id="reg-email" name="email" placeholder="name@example.com" required>
+        </p>
+        <p>
+          <label for="reg-password">Password</label><br>
+          <input type="password" id="reg-password" name="password" required>
+        </p>
+        <p>
+          <button type="submit">Create Account</button>
+        </p>
+      </form>
+    </section>
+
+    <p>Your product pages open only after you log in.</p>
   </main>
 
   <footer>
