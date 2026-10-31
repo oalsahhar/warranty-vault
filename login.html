@@ -5,7 +5,16 @@
   <meta charset="UTF-8"> 
   <meta name="description" content="Keep all your warranties in one place">
   <meta name="author" content="Omar Alsahhar & Mohammad Alzahrani">
-  <title>	Warranty Vault | Login</title>
+  <title>  Warranty Vault | Login</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Embedded CSS: styles only for this page -->
+  <style type="text/css">
+    main section {
+      width: 60%;
+      margin: 0px auto 20px auto;
+    }
+  </style>
 </head>
 <body>
 
@@ -13,7 +22,13 @@
     <h1><a href="index.html">Warranty Vault</a></h1>
     <nav>
       <ul>
-        <li><a href="dashboard.html">My Products</a></li>
+        <li><a href="dashboard.html">My Products &#9662;</a>
+          <ul>
+            <li><a href="dashboard.html">All Products</a></li>
+            <li><a href="details.html">Product Details</a></li>
+            <li><a href="claim.html">Warranty Claim</a></li>
+          </ul>
+        </li>
         <li><a href="add-product.html">Add Product</a></li>
         <li><a href="login.html">Login</a></li>
       </ul>
@@ -65,7 +80,7 @@
       </form>
     </section>
 
-    <p>Your product pages open only after you log in.</p>
+    <p style="text-align: center; font-style: italic;">Your product pages open only after you log in.</p>
   </main>
 
   <footer>

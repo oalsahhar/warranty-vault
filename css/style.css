@@ -1,0 +1,356 @@
+/* ---------- Step 1: Basics ---------- */
+/* The whole page: font, text color, gray background */
+body {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 16px;
+  color: DarkSlateGray;
+  background-color: WhiteSmoke;
+  margin: 0px;
+}
+
+/* All headings are navy */
+h1, h2, h3, h4 {
+  color: MidnightBlue;
+}
+
+/* Links: normal, visited, mouse over, clicking */
+a:link    { color: LightSeaGreen; }
+a:visited { color: Teal; }
+a:hover   { color: MidnightBlue; }
+a:active  { color: Goldenrod; }
+
+/* The page content area: 80% wide and centered */
+main {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ---------- Step 2: Header, menu and footer ---------- */
+
+/* Top bar: gradient background + shadow under it */
+header {
+  background-image: linear-gradient(to right, MidnightBlue, Teal);
+  height: 80px;
+  padding: 0px 40px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Site name "Warranty Vault" on the left */
+header h1 {
+  float: left;
+  margin: 0px;
+  padding-top: 20px;
+  font-size: 28px;
+}
+
+/* Site name link: white, no underline, text shadow */
+header h1 a:link,
+header h1 a:visited {
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px black;
+}
+
+/* Menu on the right */
+nav {
+  float: right;
+  padding-top: 20px;
+}
+
+/* Menu list: remove bullets and default spacing */
+nav ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Menu items side by side */
+nav li {
+  float: left;
+  margin-left: 10px;
+}
+
+/* Menu links look like buttons */
+nav a:link,
+nav a:visited {
+  display: block;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 2px solid white;
+  border-radius: 6px;
+}
+
+/* Menu button turns gold under the mouse */
+nav a:hover {
+  background-color: Goldenrod;
+  border-color: Goldenrod;
+  color: MidnightBlue;
+}
+
+/* Bottom bar */
+footer {
+  background-color: MidnightBlue;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* ---------- Step 3: Box model - cards ---------- */
+
+/* Every section inside main becomes a white card */
+main section {
+  background-color: white;
+  border: 1px solid Gainsboro;
+  border-radius: 12px;
+  padding: 10px 25px 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Page title with a green line under it */
+main h2 {
+  font-size: 30px;
+  border-bottom: 3px solid LightSeaGreen;
+  padding-bottom: 8px;
+}
+
+/* Section titles are dark green */
+main h3 {
+  color: Teal;
+}
+
+/* Each FAQ question has a dashed line under it */
+details {
+  border-bottom: 1px dashed Silver;
+  padding: 10px 0px;
+}
+
+/* FAQ question text */
+summary {
+  font-weight: bold;
+  color: MidnightBlue;
+}
+
+/* ---------- Step 4: Forms ---------- */
+
+/* Field names */
+label {
+  font-weight: bold;
+  color: MidnightBlue;
+}
+
+/* Text boxes, drop-down lists and text areas */
+input, select, textarea {
+  width: 90%;
+  padding: 8px;
+  margin-top: 5px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 15px;
+  border: 1px solid Silver;
+  border-radius: 6px;
+}
+
+/* The field the user is typing in */
+input:focus, select:focus, textarea:focus {
+  border: 2px solid LightSeaGreen;
+  background-color: Azure;
+}
+
+/* Box around the radio buttons */
+fieldset {
+  border: 2px dashed LightSeaGreen;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+/* Radio buttons keep their normal size */
+fieldset input {
+  width: auto;
+}
+
+/* Title of the fieldset box */
+legend {
+  font-weight: bold;
+  color: Teal;
+  padding: 0px 8px;
+}
+
+/* All buttons */
+button {
+  background-color: LightSeaGreen;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 3px 0px Teal;
+}
+
+/* Button under the mouse */
+button:hover {
+  background-color: Teal;
+}
+
+/* ---------- Step 5: Dashboard, details and general classes ---------- */
+
+/* Summary numbers in 3 columns */
+.summary ul {
+  list-style: none;
+  padding: 0px;
+  font-size: 18px;
+  font-weight: bold;
+  column-count: 3;
+  column-gap: 30px;
+  column-rule: 1px solid Gainsboro;
+}
+
+/* Big card that holds the product cards */
+.products {
+  overflow: auto;
+}
+
+/* Each product card, 3 in a row */
+.product-card {
+  float: left;
+  width: 25%;
+  margin: 10px;
+}
+
+/* Product name */
+.product-card h4 {
+  font-size: 18px;
+  color: MidnightBlue;
+}
+
+/* Status label shape */
+.status {
+  color: white;
+  font-size: 13px;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+/* Status label colors */
+.active  { background-color: SeaGreen; }
+.soon    { background-color: DarkOrange; }
+.expired { background-color: Crimson; }
+
+/* Details table */
+table {
+  width: 100%;
+}
+
+/* Table header cells (left column) */
+th {
+  background-color: MidnightBlue;
+  color: white;
+  text-align: left;
+  width: 30%;
+  padding: 10px;
+}
+
+/* Table data cells (right column) */
+td {
+  background-color: WhiteSmoke;
+  padding: 10px;
+}
+
+/* ---------- Step 6: Positioning and layering (z-index) ---------- */
+
+/* The card is the reference box for the tag */
+.product-card {
+  position: relative;
+  z-index: 1;
+  margin-top: 25px;
+}
+
+/* Status tag sits on top of the card's top border */
+.status-tag {
+  position: absolute;
+  top: -28px;
+  right: 15px;
+  z-index: 2;
+  background-color: white;
+  border: 1px solid Gainsboro;
+  border-radius: 20px;
+  padding: 6px 12px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* (Step 7 = embedded and inline CSS, written inside the HTML pages) */
+
+/* ---------- Step 8: Drop-down menu ---------- */
+
+/* Each menu item is the reference box for its sub menu */
+nav li {
+  position: relative;
+}
+
+/* Sub menu is hidden until the mouse is over its item */
+nav li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  z-index: 10;
+  width: 180px;
+  background-color: white;
+  border: 1px solid Gainsboro;
+  border-radius: 6px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Show the sub menu on hover */
+nav li:hover ul {
+  display: block;
+}
+
+/* Sub menu items are under each other */
+nav li ul li {
+  float: none;
+  margin: 0px;
+}
+
+/* Sub menu links */
+nav li ul a:link,
+nav li ul a:visited {
+  color: MidnightBlue;
+  border: none;
+  border-radius: 0px;
+}
+
+/* Sub menu link under the mouse */
+nav li ul a:hover {
+  background-color: PowderBlue;
+  color: MidnightBlue;
+}
+
+/* ---------- Step 9: Element-specific class ---------- */
+
+/* Only <p> elements with class="note" */
+p.note {
+  font-style: italic;
+  background-color: LightYellow;
+  border-left: 4px solid Goldenrod;
+  padding: 8px 12px;
+}
+
+/* ---------- Step 10: Print ---------- */
+
+@media print {
+  header, footer, button {
+    display: none;
+  }
+  body {
+    background-color: white;
+    font-family: "times new roman", times, serif;
+  }
+  main section {
+    box-shadow: none;
+    border: 1px solid black;
+  }
+}
