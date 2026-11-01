@@ -6,6 +6,18 @@
   <meta name="description" content="Keep all your warranties in one place">
   <meta name="author" content="Omar Alsahhar & Mohammad Alzahrani">
   <title>Warranty Vault | Add Product</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Embedded CSS: styles only for this page -->
+  <style type="text/css">
+    form {
+      background-color: white;
+      border: 1px solid Gainsboro;
+      border-radius: 12px;
+      padding: 20px 25px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
 
@@ -13,7 +25,13 @@
     <h1><a href="index.html">Warranty Vault</a></h1>
     <nav>
       <ul>
-        <li><a href="dashboard.html">My Products</a></li>
+        <li><a href="dashboard.html">My Products &#9662;</a>
+          <ul>
+            <li><a href="dashboard.html">All Products</a></li>
+            <li><a href="details.html">Product Details</a></li>
+            <li><a href="claim.html">Warranty Claim</a></li>
+          </ul>
+        </li>
         <li><a href="add-product.html">Add Product</a></li>
         <li><a href="login.html">Login</a></li>
       </ul>
@@ -79,7 +97,7 @@
         <textarea id="notes" name="notes" rows="3" cols="40" placeholder="e.g. The paper invoice is in the office drawer"></textarea>
       </p>
 
-      <p>Note: You do not enter the warranty end date. The system calculates it from the purchase date and the warranty period.</p>
+      <p class="note">Note: You do not enter the warranty end date. The system calculates it from the purchase date and the warranty period.</p>
 
       <p>
         <button type="submit">Save Product</button>
