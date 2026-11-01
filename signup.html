@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="description" content="Keep all your warranties in one place">
+  <meta name="author" content="Omar Alsahhar & Mohammad Alzahrani">
+  <title>Warranty Vault | Sign Up</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Embedded CSS: styles only for this page -->
+  <style type="text/css">
+    main section {
+      width: 60%;
+      margin: 0px auto 20px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><a href="index.html">Warranty Vault</a></h1>
+    <nav>
+      <ul>
+        <li><a href="dashboard.html">My Products &#9662;</a>
+          <ul>
+            <li><a href="dashboard.html">All Products</a></li>
+            <li><a href="details.html">Product Details</a></li>
+            <li><a href="claim.html">Warranty Claim</a></li>
+          </ul>
+        </li>
+        <li><a href="add-product.html">Add Product</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <h2>Sign Up</h2>
+<main> 
+
+    <h2>Sign Up</h2>
+    <section>
+      <h3>Create an Account</h3>
+      <form action="dashboard.html" method="get">
+        <p>
+          <label for="reg-name">Name</label><br>
+          <input type="text" id="reg-name" name="name" placeholder="e.g. Omar" required>
+        </p>
+        <p>
+          <label for="reg-email">Email</label><br>
+          <input type="email" id="reg-email" name="email" placeholder="name@example.com" required>
+        </p>
+        <p>
+          <label for="reg-password">Password</label><br>
+          <input type="password" id="reg-password" name="password" minlength="8" required>
+        </p>
+        <p>
+          <label for="reg-confirm">Confirm password</label><br>
+          <input type="password" id="reg-confirm" name="confirm" minlength="8" required>
+        </p>
+        <p>
+          <button type="submit">Create Account</button>
+        </p>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </section>
+<footer>
+    <p>CPIS 358 Project - Omar Alsahhar &amp; Mohammad Alzahrani</p>
+</footer>
+</main>
+</html>
