@@ -1,356 +1,306 @@
-/* ---------- Step 1: Basics ---------- */
-/* The whole page: font, text color, gray background */
+/* ===== Basics ===== */
+
 body {
-  font-family: arial, helvetica, sans-serif;
+  margin: 0;
+  background-color: #F6F5F1;
+  color: #1B2430;
+  font-family: Tahoma, Arial, sans-serif;
   font-size: 16px;
-  color: DarkSlateGray;
-  background-color: WhiteSmoke;
-  margin: 0px;
+  line-height: 1.6;
 }
 
-/* All headings are navy */
-h1, h2, h3, h4 {
-  color: MidnightBlue;
-}
+a:link,
+a:visited { color: #0E5E57; }
+a:hover   { color: #0A4540; }
 
-/* Links: normal, visited, mouse over, clicking */
-a:link    { color: LightSeaGreen; }
-a:visited { color: Teal; }
-a:hover   { color: MidnightBlue; }
-a:active  { color: Goldenrod; }
-
-/* The page content area: 80% wide and centered */
 main {
-  width: 80%;
-  margin: auto;
-  padding: 20px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 24px 0 40px 0;
 }
 
-/* ---------- Step 2: Header, menu and footer ---------- */
+main section { margin-bottom: 28px; }
 
-/* Top bar: gradient background + shadow under it */
+
+/* ===== Header and dropdown menu (master page) ===== */
+
 header {
-  background-image: linear-gradient(to right, MidnightBlue, Teal);
-  height: 80px;
-  padding: 0px 40px;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+  background-color: #1B2430;
+  color: #FFFFFF;
+  padding: 10px 5%;
+  height: 58px;              /* fixed height keeps the floated parts inside the header
+                                (overflow: auto was cutting off the dropdown menu) */
 }
 
-/* Site name "Warranty Vault" on the left */
+header img {
+  float: left;
+  margin: 6px 12px 0 0;
+  border: 0;
+}
+
 header h1 {
   float: left;
-  margin: 0px;
-  padding-top: 20px;
-  font-size: 28px;
+  margin: 10px 0;
+  font-size: 1.5em;
 }
 
-/* Site name link: white, no underline, text shadow */
 header h1 a:link,
 header h1 a:visited {
-  color: white;
+  color: #FFFFFF;
   text-decoration: none;
-  text-shadow: 2px 2px 4px black;
+  text-shadow: 1px 1px 3px #000000;   /* text shadow */
 }
 
-/* Menu on the right */
-nav {
-  float: right;
-  padding-top: 20px;
-}
+nav { float: right; }
 
-/* Menu list: remove bullets and default spacing */
 nav ul {
   list-style: none;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
-/* Menu items side by side */
 nav li {
   float: left;
-  margin-left: 10px;
+  position: relative;
 }
 
-/* Menu links look like buttons */
 nav a:link,
 nav a:visited {
   display: block;
-  color: white;
-  font-weight: bold;
+  padding: 14px 16px;
+  color: #FFFFFF;
   text-decoration: none;
-  padding: 8px 16px;
-  border: 2px solid white;
-  border-radius: 6px;
 }
 
-/* Menu button turns gold under the mouse */
-nav a:hover {
-  background-color: Goldenrod;
-  border-color: Goldenrod;
-  color: MidnightBlue;
-}
+nav a:hover { background-color: #0E5E57; }
 
-/* Bottom bar */
-footer {
-  background-color: MidnightBlue;
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
-
-/* ---------- Step 3: Box model - cards ---------- */
-
-/* Every section inside main becomes a white card */
-main section {
-  background-color: white;
-  border: 1px solid Gainsboro;
-  border-radius: 12px;
-  padding: 10px 25px 20px 25px;
-  margin-bottom: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Page title with a green line under it */
-main h2 {
-  font-size: 30px;
-  border-bottom: 3px solid LightSeaGreen;
-  padding-bottom: 8px;
-}
-
-/* Section titles are dark green */
-main h3 {
-  color: Teal;
-}
-
-/* Each FAQ question has a dashed line under it */
-details {
-  border-bottom: 1px dashed Silver;
-  padding: 10px 0px;
-}
-
-/* FAQ question text */
-summary {
-  font-weight: bold;
-  color: MidnightBlue;
-}
-
-/* ---------- Step 4: Forms ---------- */
-
-/* Field names */
-label {
-  font-weight: bold;
-  color: MidnightBlue;
-}
-
-/* Text boxes, drop-down lists and text areas */
-input, select, textarea {
-  width: 90%;
-  padding: 8px;
-  margin-top: 5px;
-  font-family: arial, helvetica, sans-serif;
-  font-size: 15px;
-  border: 1px solid Silver;
-  border-radius: 6px;
-}
-
-/* The field the user is typing in */
-input:focus, select:focus, textarea:focus {
-  border: 2px solid LightSeaGreen;
-  background-color: Azure;
-}
-
-/* Box around the radio buttons */
-fieldset {
-  border: 2px dashed LightSeaGreen;
-  border-radius: 8px;
-  padding: 10px 20px;
-}
-
-/* Radio buttons keep their normal size */
-fieldset input {
-  width: auto;
-}
-
-/* Title of the fieldset box */
-legend {
-  font-weight: bold;
-  color: Teal;
-  padding: 0px 8px;
-}
-
-/* All buttons */
-button {
-  background-color: LightSeaGreen;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 10px 22px;
-  border: none;
-  border-radius: 6px;
-  box-shadow: 0px 3px 0px Teal;
-}
-
-/* Button under the mouse */
-button:hover {
-  background-color: Teal;
-}
-
-/* ---------- Step 5: Dashboard, details and general classes ---------- */
-
-/* Summary numbers in 3 columns */
-.summary ul {
-  list-style: none;
-  padding: 0px;
-  font-size: 18px;
-  font-weight: bold;
-  column-count: 3;
-  column-gap: 30px;
-  column-rule: 1px solid Gainsboro;
-}
-
-/* Big card that holds the product cards */
-.products {
-  overflow: auto;
-}
-
-/* Each product card, 3 in a row */
-.product-card {
-  float: left;
-  width: 25%;
-  margin: 10px;
-}
-
-/* Product name */
-.product-card h4 {
-  font-size: 18px;
-  color: MidnightBlue;
-}
-
-/* Status label shape */
-.status {
-  color: white;
-  font-size: 13px;
-  padding: 3px 10px;
-  border-radius: 12px;
-}
-
-/* Status label colors */
-.active  { background-color: SeaGreen; }
-.soon    { background-color: DarkOrange; }
-.expired { background-color: Crimson; }
-
-/* Details table */
-table {
-  width: 100%;
-}
-
-/* Table header cells (left column) */
-th {
-  background-color: MidnightBlue;
-  color: white;
-  text-align: left;
-  width: 30%;
-  padding: 10px;
-}
-
-/* Table data cells (right column) */
-td {
-  background-color: WhiteSmoke;
-  padding: 10px;
-}
-
-/* ---------- Step 6: Positioning and layering (z-index) ---------- */
-
-/* The card is the reference box for the tag */
-.product-card {
-  position: relative;
-  z-index: 1;
-  margin-top: 25px;
-}
-
-/* Status tag sits on top of the card's top border */
-.status-tag {
-  position: absolute;
-  top: -28px;
-  right: 15px;
-  z-index: 2;
-  background-color: white;
-  border: 1px solid Gainsboro;
-  border-radius: 20px;
-  padding: 6px 12px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-/* (Step 7 = embedded and inline CSS, written inside the HTML pages) */
-
-/* ---------- Step 8: Drop-down menu ---------- */
-
-/* Each menu item is the reference box for its sub menu */
-nav li {
-  position: relative;
-}
-
-/* Sub menu is hidden until the mouse is over its item */
+/* The dropdown list is hidden until the mouse is over its menu item */
 nav li ul {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0px;
-  z-index: 10;
-  width: 180px;
-  background-color: white;
-  border: 1px solid Gainsboro;
-  border-radius: 6px;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  left: 0;
+  width: 12em;
+  background-color: #FFFFFF;
+  border: 1px solid #E3E1DA;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 6px 14px rgba(27, 36, 48, 0.15);
+  z-index: 10;               /* the menu opens on top of the page */
 }
 
-/* Show the sub menu on hover */
-nav li:hover ul {
-  display: block;
-}
+nav li:hover ul { display: block; }
 
-/* Sub menu items are under each other */
-nav li ul li {
-  float: none;
-  margin: 0px;
-}
+nav li ul li { float: none; }
 
-/* Sub menu links */
 nav li ul a:link,
-nav li ul a:visited {
-  color: MidnightBlue;
-  border: none;
-  border-radius: 0px;
-}
+nav li ul a:visited { color: #1B2430; }
 
-/* Sub menu link under the mouse */
 nav li ul a:hover {
-  background-color: PowderBlue;
-  color: MidnightBlue;
+  background-color: #E1F0ED;
+  color: #0B5C54;
 }
 
-/* ---------- Step 9: Element-specific class ---------- */
 
-/* Only <p> elements with class="note" */
-p.note {
-  font-style: italic;
-  background-color: LightYellow;
-  border-left: 4px solid Goldenrod;
-  padding: 8px 12px;
+/* ===== General classes ===== */
+
+/* .card: any white box (product cards, about page boxes) */
+.card {
+  position: relative;        /* the ribbon is placed relative to the card */
+  z-index: 1;
+  background-color: #FFFFFF;
+  border: 1px solid #E3E1DA;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(27, 36, 48, 0.10);
+  padding: 16px 20px;
+  margin-bottom: 24px;
 }
 
-/* ---------- Step 10: Print ---------- */
+/* .btn: links and buttons that look like buttons */
+button,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  background-color: #0E5E57;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: inherit;
+  font-size: 1em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(27, 36, 48, 0.20);
+}
+
+button:hover,
+.btn:hover { background-color: #0A4540; }
+
+/* .badge: status label, used with one of the three status classes */
+.badge {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+/* Soft status colors (easy on the eyes): light green, light orange, light red.
+   Used on the status badges AND on the matching filter buttons. */
+.active   { background-color: #DCF2E3; color: #1E6B3A; }
+.expiring { background-color: #FDEBD2; color: #9A5A0C; }
+.expired  { background-color: #FBE1E1; color: #A32D2D; }
+
+/* Filter buttons keep their own color, a little darker on hover */
+button.active:hover   { background-color: #C4E8CF; }
+button.expiring:hover { background-color: #F9DAB0; }
+button.expired:hover  { background-color: #F6C9C9; }
+
+
+/* ===== Layering: ribbon on top of the card corner ===== */
+
+.ribbon {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  z-index: 2;                /* higher than the card (1), so it shows on top */
+  background-color: #B86A0C;
+  color: #FFFFFF;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.8em;
+  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ===== Home page ===== */
+
+.hero {
+  background-image: linear-gradient(to right, #0E5E57, #1B2430);
+  color: #FFFFFF;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(27, 36, 48, 0.20);
+}
+
+.hero h2 {
+  margin-top: 0;
+  font-size: 2em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.40);
+}
+
+.hero a:link,
+.hero a:visited { color: #FFFFFF; }
+
+.hero .btn:link,
+.hero .btn:visited {
+  background-color: #FFFFFF;
+  color: #0E5E57;
+  margin-right: 16px;
+}
+
+details {
+  background-color: #FFFFFF;
+  border: 1px solid #E3E1DA;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* ===== Dashboard ===== */
+
+.summary {
+  background-color: #FFFFFF;
+  border: 1px solid #E3E1DA;
+  border-radius: 12px;
+  padding: 12px 20px;
+}
+
+/* Product cards side by side, three in a row */
+.products { overflow: auto; }
+
+.products article {
+  float: left;
+  width: 27%;
+  margin-right: 2%;
+  min-height: 290px;
+}
+
+meter {
+  width: 60%;
+  height: 14px;
+}
+
+
+/* ===== Tables (details and about pages) ===== */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+th,
+td {
+  border: 1px solid #E3E1DA;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+th { background-color: #F1EFE9; }
+
+
+/* ===== Forms ===== */
+
+input,
+select,
+textarea {
+  padding: 8px 10px;
+  border: 1px solid #C9C6BC;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+input:focus,
+select:focus,
+textarea:focus { background-color: #EEF6F4; }
+
+fieldset {
+  border: 1px solid #E3E1DA;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+legend { font-weight: bold; }
+
+
+/* ===== Footer ===== */
+
+footer {
+  background-color: #1B2430;
+  color: #B9C2CE;
+  text-align: center;
+  padding: 16px;
+}
+
+
+/* ===== Print (always last) ===== */
 
 @media print {
-  header, footer, button {
-    display: none;
-  }
+  header, nav, footer, button, .btn:link, .btn:visited, .ribbon { display: none; }
+
   body {
-    background-color: white;
-    font-family: "times new roman", times, serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
   }
-  main section {
-    box-shadow: none;
-    border: 1px solid black;
-  }
+
+  .card { box-shadow: none; }
 }

@@ -22,7 +22,15 @@
 <body>
 
   <header>
+    <!-- Image map: clicking the logo opens the About Us page -->
+    <img src="images/logo.png" alt="Warranty Vault logo" width="48" height="48" usemap="#logo-map">
+    <map name="logo-map">
+      <area shape="rect" coords="0,0,48,48" href="about.html" alt="About Us">
+    </map>
+
     <h1><a href="index.html">Warranty Vault</a></h1>
+
+    <!-- Main menu with a dropdown under My Products -->
     <nav>
       <ul>
         <li><a href="dashboard.html">My Products &#9662;</a>
@@ -33,7 +41,9 @@
           </ul>
         </li>
         <li><a href="add-product.html">Add Product</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
       </ul>
     </nav>
   </header>

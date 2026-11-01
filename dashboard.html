@@ -11,7 +11,15 @@
 <body>
 
   <header>
+    <!-- Image map: clicking the logo opens the About Us page -->
+    <img src="images/logo.png" alt="Warranty Vault logo" width="48" height="48" usemap="#logo-map">
+    <map name="logo-map">
+      <area shape="rect" coords="0,0,48,48" href="about.html" alt="About Us">
+    </map>
+
     <h1><a href="index.html">Warranty Vault</a></h1>
+
+    <!-- Main menu with a dropdown under My Products -->
     <nav>
       <ul>
         <li><a href="dashboard.html">My Products &#9662;</a>
@@ -22,7 +30,9 @@
           </ul>
         </li>
         <li><a href="add-product.html">Add Product</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
       </ul>
     </nav>
   </header>
@@ -51,19 +61,19 @@
       </form>
       <p>
         <button type="button">All</button>
-        <button type="button">Active</button>
-        <button type="button">Expiring Soon</button>
-        <button type="button">Expired</button>
+        <button type="button" class="active">Active</button>
+        <button type="button" class="expiring">Expiring Soon</button>
+        <button type="button" class="expired">Expired</button>
       </p>
     </section>
 
     <!-- One card for each product -->
-    <section>
+    <section class="products">
       <h3>Products</h3>
 
       <article class="card">
         <h4>Samsung Galaxy S24</h4>
-        <p>Status: <strong>Active</strong></p>
+        <p>Status: <span class="badge active">Active</span></p>
         <p>Jarir - bought on 12/03/2026</p>
         <p>Warranty remaining: <meter min="0" max="100" value="72">72%</meter></p>
         <p>524 days left - Ends on 12/03/2028</p>
@@ -72,7 +82,7 @@
 
       <article class="card">
         <h4>LG Washing Machine</h4>
-        <p>Status: <strong>Active</strong></p>
+        <p>Status: <span class="badge active">Active</span></p>
         <p>eXtra - bought on 20/01/2025</p>
         <p>Warranty remaining: <meter min="0" max="100" value="15">15%</meter></p>
         <p>107 days left - Ends on 20/01/2027</p>
@@ -81,7 +91,7 @@
 
       <article class="card">
         <h4>Dyson V15 Vacuum</h4>
-        <p>Status: <strong>Active</strong></p>
+        <p>Status: <span class="badge active">Active</span></p>
         <p>SACO - bought on 01/02/2026</p>
         <p>Warranty remaining: <meter min="0" max="100" value="66">66%</meter></p>
         <p>484 days left - Ends on 01/02/2028</p>
@@ -89,8 +99,10 @@
       </article>
 
       <article class="card">
+        <!-- Layering: this ribbon sits on top of the card corner (z-index) -->
+        <span class="ribbon">Expiring Soon</span>
         <h4>Sony WH-1000XM5 Headphones</h4>
-        <p>Status: <strong>Expiring Soon</strong></p>
+        <p>Status: <span class="badge expiring">Expiring Soon</span></p>
         <p>Jarir - bought on 25/10/2025</p>
         <p>Warranty remaining: <meter min="0" max="100" value="5">5%</meter></p>
         <p>20 days left - Ends on 25/10/2026</p>
@@ -98,8 +110,10 @@
       </article>
 
       <article class="card">
+        <!-- Inline CSS example: this ribbon gets a gray color only here -->
+        <span class="ribbon" style="background-color: #454B54;">Expired</span>
         <h4>HP Pavilion Laptop</h4>
-        <p>Status: <strong>Expired</strong></p>
+        <p>Status: <span class="badge expired">Expired</span></p>
         <p>eXtra - bought on 10/06/2024</p>
         <p>Warranty remaining: <meter min="0" max="100" value="0">0%</meter></p>
         <p>Warranty expired - Ended on 10/06/2026</p>
