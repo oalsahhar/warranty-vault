@@ -7,6 +7,7 @@
   <meta name="author" content="Omar Alsahhar & Mohammad Alzahrani">
   <title>Warranty Vault | Add Product</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/script.js"></script>
 
   <!-- Embedded CSS: styles only for this page -->
   <style type="text/css">
@@ -53,17 +54,17 @@
     <p>Fill in your invoice details. Fields marked with * are required.</p>
 
     <!-- action: after saving, go to the details page (real saving comes in week 4) -->
-    <form action="details.html" method="get">
+    <form action="details.html" method="get" onsubmit="return validateProduct()">
 
       <p>
         <label for="name">Product name *</label><br>
-        <input type="text" id="name" name="name" placeholder="e.g. Galaxy S24" required>
+        <input type="text" id="name" name="name" placeholder="e.g. Galaxy S24" onblur="checkField(this)">
       </p>
 
       <p>
         <!-- list connects this field to the datalist below -->
         <label for="company">Manufacturer *</label><br>
-        <input type="text" id="company" name="company" list="companies" placeholder="Start typing: Samsung, LG, Apple" required>
+        <input type="text" id="company" name="company" list="companies" placeholder="Start typing: Samsung, LG, Apple" onblur="checkField(this)">
         <datalist id="companies">
           <option value="Samsung">
           <option value="Apple">
@@ -83,7 +84,7 @@
 
       <p>
         <label for="store">Store *</label><br>
-        <input type="text" id="store" name="store" placeholder="e.g. Jarir" required>
+        <input type="text" id="store" name="store" placeholder="e.g. Jarir" onblur="checkField(this)">
       </p>
 
       <p>
@@ -93,13 +94,13 @@
 
       <p>
         <label for="purchase-date">Purchase date *</label><br>
-        <input type="date" id="purchase-date" name="purchaseDate" required>
+        <input type="date" id="purchase-date" name="purchaseDate" onblur="checkField(this)">
       </p>
 
       <p>
         <!-- min and max: the browser rejects numbers outside 1 to 120 -->
         <label for="months">Warranty period (months) *</label><br>
-        <input type="number" id="months" name="months" min="1" max="120" placeholder="24" required>
+        <input type="number" id="months" name="months" placeholder="24" onblur="checkField(this)">
       </p>
 
       <p>
@@ -108,7 +109,8 @@
       </p>
 
       <p class="note">Note: You do not enter the warranty end date. The system calculates it from the purchase date and the warranty period.</p>
-
+      <!-- JavaScript writes the error message here -->
+      <p id="product-error" style="color: Crimson; font-weight: bold;"></p>
       <p>
         <button type="submit">Save Product</button>
         <a href="dashboard.html">Cancel</a>

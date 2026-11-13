@@ -7,6 +7,7 @@
   <meta name="author" content="Omar Alsahhar & Mohammad Alzahrani">
   <title>Warranty Vault | Sign Up</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/script.js"></script>
 
   <!-- Embedded CSS: styles only for this page -->
   <style type="text/css">
@@ -50,23 +51,25 @@
     <h2>Sign Up</h2>
     <section>
       <h3>Create an Account</h3>
-      <form action="dashboard.html" method="get">
+      <form action="dashboard.html" method="get" onsubmit="return validateSignup()">
         <p>
           <label for="reg-name">Name</label><br>
-          <input type="text" id="reg-name" name="name" placeholder="e.g. Omar" required>
+          <input type="text" id="reg-name" name="name" placeholder="e.g. Omar">
         </p>
         <p>
           <label for="reg-email">Email</label><br>
-          <input type="email" id="reg-email" name="email" placeholder="name@example.com" required>
+          <input type="email" id="reg-email" name="email" placeholder="name@example.com">
         </p>
         <p>
           <label for="reg-password">Password</label><br>
-          <input type="password" id="reg-password" name="password" minlength="8" required>
+          <input type="password" id="reg-password" name="password">
         </p>
         <p>
           <label for="reg-confirm">Confirm password</label><br>
-          <input type="password" id="reg-confirm" name="confirm" minlength="8" required>
+          <input type="password" id="reg-confirm" name="confirm">
         </p>
+        <!-- JavaScript writes the error message here -->
+        <p id="signup-error" style="color: Crimson; font-weight: bold;"></p>
         <p>
           <button type="submit">Create Account</button>
         </p>
