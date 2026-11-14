@@ -68,7 +68,7 @@ function validateProduct() {
   return true;
 }
 
-/* ---------- Step 4: Dashboard filter buttons ---------- */
+/* ---------- Dashboard filter buttons ---------- */
 function filterProducts(status) {
   var count = 0;
 
@@ -87,3 +87,29 @@ function filterProducts(status) {
   document.getElementById("filter-result").innerHTML = "Showing " + count + " product(s): " + status;
 }
 
+/* ----------Warranty claim message ---------- */
+function generateMessage() {
+  // 1) Read the user's choices
+  var issue       = document.getElementById("issue").value;
+  var description = document.getElementById("description").value;
+
+  // 2) Which radio button is selected?
+  var request = "repair";
+  if (document.getElementById("replace").checked) {
+    request = "replacement";
+  } else if (document.getElementById("refund").checked) {
+    request = "refund";
+  }
+
+  // 3) The description must not be empty
+  if (description == "") {
+    window.alert("Please describe the problem first.");
+    return;
+  }
+
+  // 4) Write the problem part of the message and show the message box
+  document.getElementById("msg-problem").innerHTML =
+    "Issue: " + issue + ". " + description +
+    " I would like to request a " + request + " under warranty. The invoice is attached.";
+  document.getElementById("claim-message").style.display = "block";
+}

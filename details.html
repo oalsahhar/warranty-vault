@@ -7,8 +7,39 @@
   <meta name="author" content="Omar Alsahhar & Mohammad Alzahrani">
   <title>Warranty Vault | Product Details</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- Embedded JavaScript: works only on this page -->
+  <script>
+    // Runs when the page finishes loading (onload)
+    function startPage() {
+      var now = new Date();
+      var hour = now.getHours();
+      var greeting;
+
+      if (hour < 12) {
+        greeting = "Good Morning";
+      } else if (hour < 18) {
+        greeting = "Good Afternoon";
+      } else {
+        greeting = "Good Evening";
+      }
+
+      document.getElementById("greeting").innerHTML = greeting + ", Omar! Here are your product details.";
+    }
+
+    // Mouse over the photo: show the invoice
+    function showInvoice() {
+      document.getElementById("product-photo").src = "images/invoice.png";
+      document.getElementById("photo-caption").innerHTML = "Invoice from Jarir - Order #58213";
+    }
+
+    // Mouse out of the photo: show the product again
+    function showProduct() {
+      document.getElementById("product-photo").src = "images/product.png";
+      document.getElementById("photo-caption").innerHTML = "Move the mouse over the photo to see the invoice.";
+    }
+  </script>
 </head>
-<body>
+<body onload="startPage()">
 
   <header>
     <!-- Image map: clicking the logo opens the About Us page -->
@@ -39,6 +70,8 @@
 
   <main>
     <h2>Samsung Galaxy S24</h2>
+    <!-- JavaScript writes a greeting here when the page loads -->
+    <p id="greeting"></p>
     <p>Status: <span class="badge active">Active</span></p>
 
     <!-- Actions on this product -->
@@ -48,6 +81,14 @@
       <button type="button">Print Warranty Page</button>
       <button type="button">Delete</button>
     </p>
+    <!-- Dynamic picture: the photo changes to the invoice on mouse over -->
+
+    <section>
+      <h3>Product Photo</h3>
+      <img id="product-photo" src="images/product.png" alt="Product photo" width="220" height="260"
+           onmouseover="showInvoice()" onmouseout="showProduct()">
+      <p id="photo-caption">Move the mouse over the photo to see the invoice.</p>
+    </section>
 
     <!-- Product and invoice data in a table -->
     <section>
